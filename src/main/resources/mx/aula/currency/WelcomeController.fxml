@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0"
+   xmlns="http://javafx.com/javafx"
+   xmlns:fx="http://javafx.com/fxml"
+   fx:controller="mx.aula.currency.controller.WelcomeController"
+   stylesheets="@styles/styleWelcome.css">
+   <children>
+      <!-- Texto de Bienvenida -->
+      <Label fx:id="tittleWelcome" text="Bienvenido a Conversión de Divisas" />
+
+      <!-- Sección API/Curso -->
+      <HBox alignment="CENTER" spacing="40.0">
+         <Label text="API" />
+         <ImageView fx:id="apiImage" fitHeight="180.0" fitWidth="180.0" preserveRatio="true" />
+         <Label text="Curso" />
+         <ImageView fx:id="cursoImage" fitHeight="80.0" fitWidth="80.0" preserveRatio="true" />
+         <Label text="|" />
+         <ImageView fx:id="aulaImage" fitHeight="60.0" fitWidth="60.0" preserveRatio="true" />
+      </HBox>
+
+      <!-- Botón de Continuación -->
+      <Button fx:id="continueButton" text="Ingresar" onAction="#ControllerPrimary" />
+
+      <HBox alignment="CENTER_RIGHT" spacing="20">
+         <ImageView fx:id="iconGithub" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" />
+         <Label fx:id="aboutGithub" text="jmikhaelz " />
+      </HBox>
+
+      <HBox alignment="CENTER_RIGHT" spacing="20">
+         <ImageView fx:id="iconLinkedln" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" />
+         <Label fx:id="aboutLinkedln" text="in/zent-mjesus" />
+      </HBox>
+   </children>
+</VBox>
