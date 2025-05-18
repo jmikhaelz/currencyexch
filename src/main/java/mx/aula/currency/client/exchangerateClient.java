@@ -14,7 +14,7 @@ import mx.aula.currency.util.ConfigUtils;
 */
 public class exchangerateClient {
     private static final String BASE_URL = "https://v6.exchangerate-api.com/v6/";
-    private static final String KEY_API = ConfigUtils.getProperty(".exchangerate.key");
+    private static final String KEY_API = ConfigUtils.getProperty("exchangerate.key");
     private HttpClient client = HttpClient.newHttpClient();
     private HttpRequest request;
     private HttpResponse<String> response;
