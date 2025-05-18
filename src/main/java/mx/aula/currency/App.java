@@ -1,5 +1,8 @@
 package mx.aula.currency;
 
+import java.io.IOException;
+import java.util.logging.Logger;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,26 +10,35 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import mx.aula.currency.util.CleanTerm;
 
-import java.io.IOException;
-
 /**
  * JavaFX App
  */
 public class App extends Application {
+    private static final Logger logger = Logger.getLogger(App.class.getName());
 
     private static Scene scene;
 
     @SuppressWarnings("exports")
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("WelcomeController"), 640, 480);
-        stage.setTitle("Bienvenido a Currency Exchange ONE-NEXT-G8");
-        stage.setScene(scene);
-        stage.show();
+        try {
+            scene = new Scene(loadFXML("WelcomeController"), 900, 600);
+            stage.setTitle("Bienvenido a Currency Exchange ONE-NEXT-G8");
+            stage.initStyle(javafx.stage.StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            logger.warning("[Start] " + e.getMessage());
+        }
     }
 
     public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+        Parent root = loadFXML(fxml);
+        if (scene != null) {
+            scene.setRoot(root);
+        } else {
+            logger.severe("Intento de cambiar escena antes de inicializar `scene`.");
+        }
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
@@ -36,6 +48,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         new CleanTerm().start();
+        logger.info("[Panel] App");
         launch();
     }
 }

@@ -1,0 +1,67 @@
+/* Estilos para los títulos de cada recuadro */
+.section-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+/* Estilos para los campos de entrada y comboBox */
+.input-field {
+    -fx-pref-width: 200px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-color: rgb(213, 222, 238);
+}
+
+/* Estilos para el botón de cambio de divisas */
+.switch-button {
+    -fx-font-size: 25px;
+    -fx-pref-width: 10px;
+    -fx-background-color: none;
+    -fx-text-fill: #008CBA;
+    -fx-border-radius: 50px;
+    -fx-border-color: #a6e9ff;
+}
+
+/* Estilos para los textos de conversión */
+.conversion-text {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4b4b4b;
+}
+
+/* Estilos para el resultado de la conversión */
+.conversion-result {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #009688;
+}
+
+/* Estilos para el botón "Convertir" */
+.convert-button {
+    -fx-pref-width: 100px;
+    -fx-background-color: #008CBA;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 50px;
+    -fx-font-size: 14px;
+}
+
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+}
+
+#iconGithub {
+    -fx-opacity: 0.6;
+}
+
+#iconGithub:hover {
+    -fx-opacity: 1.0;
+    -fx-cursor: hand;
+}
+
+#aboutGithub {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+}

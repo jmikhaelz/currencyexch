@@ -3,30 +3,51 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" spacing="20.0"
-   xmlns="http://javafx.com/javafx"
-   xmlns:fx="http://javafx.com/fxml"
-   fx:controller="mx.aula.currency.controller.PrimaryController"
-   stylesheets="@styles/styleWelcome.css">
-   <children>
-      <!-- Texto de Bienvenida -->
-      <Label fx:id="tittlePrimary" text="Conversion de Divisa" />
-      <Label fx:id="InputLabel" text="Busqueda de Moneda........." />
+<GridPane xmlns:fx="http://javafx.com/fxml"
+   fx:controller="mx.aula.currency.controller.PrimaryController" vgap="10" hgap="10"
+   alignment="CENTER" stylesheets="@styles/stylePrimary.css">
+   <!-- Primer recuadro: Importe -->
+   <Label text="Importe" styleClass="section-title" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+   <TextField fx:id="amountInput" promptText="Ingrese cantidad" styleClass="input-field"
+      GridPane.rowIndex="1" GridPane.columnIndex="0" />
 
+   <!-- Segundo recuadro: De (ComboBox) -->
+   <Label text="De" styleClass="section-title" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+   <ComboBox fx:id="fromCurrency" styleClass="input-field" GridPane.rowIndex="1"
+      GridPane.columnIndex="1" />
 
-      <HBox alignment="CENTER_RIGHT" spacing="20">
-         <ImageView fx:id="iconGithub" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" />
-         <Label fx:id="aboutGithub" text="jmikhaelz " />
-      </HBox>
+   <!-- Tercer recuadro: Botón de cambio de divisas -->
+   <Button text="⇄" styleClass="switch-button" onAction="#handleSwitchAction" GridPane.rowIndex="1"
+      GridPane.columnIndex="2" />
 
-      <HBox alignment="CENTER_RIGHT" spacing="20">
-         <ImageView fx:id="iconLinkedln" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" />
-         <Label fx:id="aboutLinkedln" text="in/zent-mjesus" />
-      </HBox>
+   <!-- Cuarto recuadro: A (ComboBox) -->
+   <Label text="A" styleClass="section-title" GridPane.rowIndex="0" GridPane.columnIndex="3" />
+   <ComboBox fx:id="toCurrency" styleClass="input-field" GridPane.rowIndex="1"
+      GridPane.columnIndex="3" />
 
-   </children>
-</VBox>
+   <!-- Segundo conjunto de recuadros: Conversión -->
+   <Label fx:id="conversionLabel" text="" styleClass="conversion-text"
+      GridPane.rowIndex="2" GridPane.columnIndex="0" />
+   <Label fx:id="convertedAmount" text="" styleClass="conversion-result"
+      GridPane.rowIndex="3" GridPane.columnIndex="0" />
+   <Label fx:id="convertedAmountInv" text="" styleClass="conversion-text"
+      GridPane.rowIndex="4" GridPane.columnIndex="0" />
+
+   <Button text="Convertir" onAction="#handleConvertAction" styleClass="convert-button"
+      GridPane.rowIndex="3" GridPane.columnIndex="3" />
+   <!-- Sección de iconos sociales -->
+   <ImageView fx:id="iconGithub" fitHeight="25.0" fitWidth="25.0" GridPane.columnIndex="4"
+      GridPane.rowIndex="10" />
+   <HBox spacing="5.0" alignment="CENTER_LEFT" GridPane.columnIndex="3" GridPane.rowIndex="10">
+      <Label fx:id="aboutGithub" text="jmikhaelz" />
+      <ImageView fx:id="iconGithub" fitHeight="25.0" fitWidth="25.0" />
+   </HBox>
+</GridPane>

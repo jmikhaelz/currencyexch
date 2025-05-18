@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.geometry.Insets?>
-
-<VBox alignment="CENTER" spacing="20.0"
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.StackPane?>
+<GridPane alignment="CENTER" hgap="20.0" vgap="20.0"
    xmlns="http://javafx.com/javafx"
    xmlns:fx="http://javafx.com/fxml"
    fx:controller="mx.aula.currency.controller.WelcomeController"
-   stylesheets="@styles/styleWelcome.css">
+   stylesheets="@styles/styleWelcome.css"
+>
+
    <children>
-      <!-- Texto de Bienvenida -->
-      <Label fx:id="tittleWelcome" text="Bienvenido a Conversión de Divisas" />
+      <!-- Título principal -->
+      <Label fx:id="titleWelcome" text="Bienvenido a Conversión de Divisas"
+         GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="10"
+         GridPane.halignment="CENTER" />
 
-      <!-- Sección API/Curso -->
-      <HBox alignment="CENTER" spacing="40.0">
-         <Label text="API" />
-         <ImageView fx:id="apiImage" fitHeight="180.0" fitWidth="180.0" preserveRatio="true" />
-         <Label text="Curso" />
-         <ImageView fx:id="cursoImage" fitHeight="80.0" fitWidth="80.0" preserveRatio="true" />
-         <Label text="|" />
-         <ImageView fx:id="aulaImage" fitHeight="60.0" fitWidth="60.0" preserveRatio="true" />
-      </HBox>
+      <!-- Sección de imágenes -->
+      <Label text="API" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <ImageView fx:id="apiImage" fitHeight="20.0" fitWidth="140.0" GridPane.columnIndex="2"
+         GridPane.rowIndex="1" />
+      <Label text="Curso" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <ImageView fx:id="aulaImage" fitHeight="35.0" fitWidth="40.0" GridPane.columnIndex="4"
+         GridPane.rowIndex="1" GridPane.halignment="CENTER" />
+      <ImageView fx:id="cursoImage" fitHeight="35.0" fitWidth="60.0" GridPane.columnIndex="5"
+         GridPane.rowIndex="1" GridPane.halignment="CENTER" />
+      <!-- Sección de iconos sociales -->
+      <ImageView fx:id="iconGithub" fitHeight="25.0" fitWidth="25.0" GridPane.columnIndex="3"
+         GridPane.rowIndex="2" />
+      <Label fx:id="aboutGithub" text="jmikhaelz" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
-      <!-- Botón de Continuación -->
-      <Button fx:id="continueButton" text="Ingresar" onAction="#ControllerPrimary" />
+      <ImageView fx:id="iconLinkedln" fitHeight="25.0" fitWidth="25.0" GridPane.columnIndex="5"
+         GridPane.rowIndex="2" />
+      <Label fx:id="aboutLinkedln" text="in/zent-mjesus" GridPane.columnIndex="4"
+         GridPane.rowIndex="2" />
 
-      <HBox alignment="CENTER_RIGHT" spacing="20">
-         <ImageView fx:id="iconGithub" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" />
-         <Label fx:id="aboutGithub" text="jmikhaelz " />
-      </HBox>
+      <StackPane GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="10"
+         GridPane.halignment="CENTER">
+         <ProgressIndicator fx:id="progressIndicator" prefWidth="80.0" prefHeight="80.0" />
+      </StackPane>
 
-      <HBox alignment="CENTER_RIGHT" spacing="20">
-         <ImageView fx:id="iconLinkedln" fitHeight="20.0" fitWidth="20.0" preserveRatio="true" />
-         <Label fx:id="aboutLinkedln" text="in/zent-mjesus" />
-      </HBox>
+
    </children>
-</VBox>
+
+</GridPane>

@@ -2,7 +2,6 @@ package mx.aula.currency.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -28,16 +27,17 @@ public class ExchangerateServiceImpl implements exchangerateService {
         return null;
 
     }
-
-    @Override
-    // Método de búsqueda dinámica por código o nombre
-    public Optional<CurrencyCode> findCurrency(List<CurrencyCode> currencies, String searchTerm) {
-        return currencies.stream()
-                .filter(currency -> currency.code().equalsIgnoreCase(searchTerm) ||
-                        currency.name().equalsIgnoreCase(searchTerm))
-                .findFirst();
-    }
     /*
+     * @Override
+     * // Método de búsqueda dinámica por código o nombre
+     * public Optional<CurrencyCode> findCurrency(List<CurrencyCode> currencies,
+     * String searchTerm) {
+     * return currencies.stream()
+     * .filter(currency -> currency.code().equalsIgnoreCase(searchTerm) ||
+     * currency.name().equalsIgnoreCase(searchTerm))
+     * .findFirst();
+     * }
+     * /*
      * currency.ifPresentOrElse(
      * c -> System.out.println("Found: " + c),
      * () -> System.out.println("Currency not found")

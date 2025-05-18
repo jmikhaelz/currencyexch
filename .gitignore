@@ -1,5 +1,5 @@
 # Ignorar el archivo de configuración con claves privadas
-src/main/resources/config/config.properties
+src/main/resources/config.properties
 
 # Maven
 /target/
