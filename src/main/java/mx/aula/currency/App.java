@@ -23,8 +23,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         try {
             scene = new Scene(loadFXML("WelcomeController"), 900, 600);
-            stage.setTitle("Bienvenido a Currency Exchange ONE-NEXT-G8");
-            stage.initStyle(javafx.stage.StageStyle.UNDECORATED);
+            stage.setTitle("Currency Exchange ONE-NEXT-G8");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
