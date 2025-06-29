@@ -1,6 +1,6 @@
 # Currency Exchange Viewer 💱
 
-(curso de Aula-Oracle-2025)
+(curso de Alura-Oracle-2025)
 
 Aplicación de escritorio construida con **JavaFX** y **Maven** que permite consultar tipos de cambio utilizando una API externa. Su objetivo es ofrecer una interfaz visual limpia para mostrar la información de diferentes monedas en tiempo real.
 
